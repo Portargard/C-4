@@ -1,0 +1,48 @@
+﻿@model C4_ChauSolution.Models.CartDetail
+
+@{
+    ViewData["Title"] = "DetailSp";
+}
+
+<table class="container table text-center">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><a href="#" style="text-decoration: none; color: black;">Chi Tiết Sản Phẩm</a></th>
+        </tr>
+    </tbody>
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6" align="center">
+      <img src="/Images/@ViewBag.SP.HinhAnh" style="width: 300px;height: 450px;">
+    </div>
+    <div class="col-lg-6" >
+               <form asp-action="ThemSPVaoCart">
+                <div>
+                    <label asp-for="IdChiTietSP" class="control-label"></label>
+                    <input asp-for="IdChiTietSP" class="form-control" value="@ViewBag.SP.IdChiTietSP" readonly/>
+                    <span asp-validation-for="IdChiTietSP" class="text-danger"></span>
+                </div>
+                <span>Ten Sp: @ViewBag.SP.TenSp</span>
+                <p>So Luong Ton: <b>@ViewBag.SP.SoLuong</b></p>
+                <hr>
+                <h3>Gia Ban: @ViewBag.SP.GiaBan đ</h3>
+                <div>
+                    <label asp-for="SoLuong" class="control-label"></label>
+                    <input asp-for="SoLuong" class="form-control" />
+                    <span asp-validation-for="SoLuong" class="text-danger"></span>
+                </div>
+               
+                <hr>
+      <input type="submit" value="Them Cart" class="btn btn-primary" />
+      </form>
+      
+    </div>
+  </div>
+</div>

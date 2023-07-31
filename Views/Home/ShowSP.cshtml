@@ -1,0 +1,38 @@
+﻿@using C4_ChauSolution.Service
+@model IEnumerable<C4_ChauSolution.Models.ChiTietSanPham>
+
+@{
+    ViewData["Title"] = "ShowSP";
+}
+@{
+    List<string> extensions = new List<string>()
+    {
+        ".png", ".jpg", ".jpeg", ".gif", ".pdf", ".raw", ".bmp", ".tif"
+    };
+}
+@foreach (var item in Model) {
+<div class="container">
+    <div class="row" style="display: inline-block;margin-right: 24px;float:left">
+      <div  style="margin-bottom: 10px;" >
+          <a href="/Home/DetailSp/@item.IdChiTietSP" style="text-decoration: none;color: black;">
+            <div class="card" style="width: 18rem;">
+              @{string a = System.IO.Path.GetExtension(item.HinhAnh);}
+                    @if(@extensions.Contains(System.IO.Path.GetExtension(item.HinhAnh).Trim()))
+                    {
+                        <img src="/images/@item.HinhAnh">
+                    }
+                    else
+                    {
+                        <span>Ảnh lỗi rồi =)))</span>                       
+                    }
+              <div class="card-body">
+                  <h4 class="card-text">@item.TenSp</h4>
+                  <span>@item.GiaBan</span>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+}
+

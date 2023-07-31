@@ -1,0 +1,50 @@
+﻿@model IEnumerable<C4_ChauSolution.Models.ChiTietHoaDon>
+
+@{
+    ViewData["Title"] = "ShowCTHoaDon";
+}
+
+<h1>ShowCTHoaDon</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHoaDon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCTHoaDon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdChiTietSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuongMua)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCTHoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdChiTietSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongMua)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

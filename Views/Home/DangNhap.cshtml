@@ -1,0 +1,34 @@
+﻿@model C4_ChauSolution.Models.KhachHang
+
+@{
+    ViewData["Title"] = "DangNhap";
+}
+
+<h1>DangNhap</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DangNhap">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TaiKoan" class="control-label"></label>
+                <input asp-for="TaiKoan" class="form-control" />
+                <span asp-validation-for="TaiKoan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MatKhau" class="control-label"></label>
+                <input asp-for="MatKhau" class="form-control" type="password"/>
+                <span asp-validation-for="MatKhau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dang Nhap" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,18 @@
+﻿@{
+	List<string> task = ViewData["Transfer1"] as List<string>;
+}
+@{
+	foreach (var x in ViewBag.Tranfer)
+	{
+		<p>@x</p>
+	}
+}
+@{
+	foreach (var x in task)
+	{
+		<p>@x</p>
+	}
+}
+
+<p>@ViewData["transssf"]</p>
+

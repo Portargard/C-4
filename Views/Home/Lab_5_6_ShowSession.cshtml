@@ -1,0 +1,81 @@
+﻿@model IEnumerable<C4_ChauSolution.Models.ChiTietSanPham>
+
+@{
+    ViewData["Title"] = "Lab_5_6_ShowSession";
+}
+
+<h1>Lab_5_6_ShowSession</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdChiTietSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenLoaiSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenNhaCungCap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenDanhMuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenDonVi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaNhap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaBan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdChiTietSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenLoaiSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNhaCungCap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDanhMuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDonVi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.ActionLink("Rollback", "Rollback", new { id=item.IdChiTietSP })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

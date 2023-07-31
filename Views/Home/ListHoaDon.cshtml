@@ -1,0 +1,64 @@
+﻿@model IEnumerable<C4_ChauSolution.Models.HoaDon>
+
+@{
+    ViewData["Title"] = "ListHoaDon";
+}
+
+<h1>ListHoaDon</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHoaDon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdNhanVien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TongTien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayThanhToan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayTao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHoaDon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdNhanVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "ShowCTHoaDon", new { id=item.IdHoaDon  }) |
+                @Html.ActionLink("Delete", "DeleteHd", new {  id=item.IdHoaDon })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
